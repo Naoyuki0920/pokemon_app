@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class PokeDetail extends StatelessWidget {
   const PokeDetail({Key? key,}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +36,16 @@ class PokeDetail extends StatelessWidget {
             "pikachu",
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           ),
-          const Chip(
-            label: Text("electric"),
+          Chip(
             backgroundColor: Colors.yellow,
-          )
+            label: Text(
+              'electric',
+              style: TextStyle(
+                  color: Colors.yellow.computeLuminance() > 0.5
+                      ? Colors.black
+                      : Colors.white),
+            ),
+          ),
         ],
       )),
     );
